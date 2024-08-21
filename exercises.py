@@ -38,7 +38,7 @@ print('Exercise 1:', manage_students())
 # Create a variable named meal and assign an empty string to it.
 # Use a for loop to iterate over the strings in foods and append each string to meal.
 
-foods = ('beef', 'pork', 'chicken') # moved out of function to be accesible for exercise 3
+foods = ('beef', 'pork', 'chicken') # made global for exercise 3
 def combine_foods():
     # your code here
     
@@ -67,9 +67,10 @@ print('Exercise 3:', slice_foods())
 # Create a dictionary named home_town containing the keys of city, state, and population.
 # Using the home_town dictionary, assign to a variable named home_town_message a string with this format: “I was born in <city>, <state> - population of <population>”
 
+
+home_town = {'city': 'Boston', 'state':'MA', 'population':1000000} # made global for exercise 5
 def hometown_info():
     # your code here
-    home_town = {'city': 'Boston', 'state':'MA', 'population':1000000}
     home_town_message = f'I was born in {home_town["city"]}, {home_town["state"]} - population of {home_town["population"]}.'
     return home_town_message
 
@@ -84,6 +85,9 @@ print('Exercise 4:', hometown_info())
 def list_home_town_items():
     # your code here
     home_town_items = []
+    for key, val in home_town.items():
+        home_town_items.append(f'{key} : {val}')
+    return(home_town_items)
 
 # Call the function and print the result
 print('Exercise 5:', list_home_town_items())
